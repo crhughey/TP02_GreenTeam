@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button fx:id="btnCancel" layoutX="390.0" layoutY="403.0" mnemonicParsing="false" onAction="#cancelButtonPressed" text="Cancel">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Label layoutX="11.0" layoutY="27.0" text="Welcome Back Professors!">
+         <font>
+            <Font name="Arial Bold" size="45.0" />
+         </font>
+      </Label>
+      <PasswordField layoutX="226.0" layoutY="300.0" />
+      <Label layoutX="226.0" layoutY="283.0" text="Password:" />
+      <TextField layoutX="226.0" layoutY="226.0" />
+      <Label layoutX="226.0" layoutY="209.0" text="Username:" />
+      <Button layoutX="99.0" layoutY="403.0" mnemonicParsing="false" text="Sign In">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

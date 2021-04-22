@@ -4,21 +4,25 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Label layoutX="52.0" layoutY="24.0" text="Professor Sign In">
+      <Label layoutX="34.0" layoutY="24.0" text="Welcome Professor!">
          <font>
-            <Font name="Arial Bold" size="60.0" />
+            <Font name="Arial Bold" size="55.0" />
          </font>
       </Label>
-      <TextField layoutX="226.0" layoutY="136.0" />
-      <PasswordField layoutX="226.0" layoutY="208.0" />
-      <TableView layoutX="200.0" layoutY="300.0" prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
+      <TextField layoutX="226.0" layoutY="174.0" />
+      <PasswordField layoutX="226.0" layoutY="265.0" />
+      <Button layoutX="89.0" layoutY="396.0" mnemonicParsing="false" text="Sign In">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCancel" layoutX="419.0" layoutY="396.0" mnemonicParsing="false" onAction="#cancelButtonPressed" text="Cancel">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Label layoutX="226.0" layoutY="157.0" text="Name:" />
+      <Label layoutX="226.0" layoutY="248.0" text="Password:" />
    </children>
 </Pane>

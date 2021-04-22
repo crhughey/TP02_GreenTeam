@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TextField layoutX="215.0" layoutY="152.0" />
+      <TextField layoutX="215.0" layoutY="216.0" />
+      <PasswordField layoutX="215.0" layoutY="287.0" />
+      <Button layoutX="82.0" layoutY="440.0" mnemonicParsing="false" text="Sign Up">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button fx:id="btnCancel" layoutX="433.0" layoutY="440.0" mnemonicParsing="false" onAction="#cancelButtonPressed" text="Cancel">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Label layoutX="215.0" layoutY="135.0" text="Name:" />
+      <Label layoutX="215.0" layoutY="199.0" text="Username:" />
+      <Label layoutX="215.0" layoutY="270.0" text="Password:" />
+      <Label layoutX="27.0" layoutY="23.0" text="Welcome Student!">
+         <font>
+            <Font name="Arial Bold" size="60.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

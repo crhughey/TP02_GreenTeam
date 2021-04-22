@@ -6,7 +6,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Button fx:id="btnStudentSignIn" layoutX="76.0" layoutY="175.0" mnemonicParsing="false" onAction="#studentSignInPressed" text="Student Sign In">
+      <Button fx:id="btnStudentSignIn" layoutX="76.0" layoutY="219.0" mnemonicParsing="false" onAction="#studentSignInPressed" text="Student Sign In">
          <font>
             <Font size="20.0" />
          </font></Button>
@@ -15,16 +15,16 @@
             <Font name="Arial Bold" size="60.0" />
          </font>
       </Label>
-      <Button fx:id="btnProfessorSignIn" layoutX="353.0" layoutY="175.0" mnemonicParsing="false" onAction="#professorSignInPressed" text="Professor Sign in">
+      <Button fx:id="btnProfessorSignIn" layoutX="348.0" layoutY="219.0" mnemonicParsing="false" onAction="#professorSignInPressed" text="Professor Sign in">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button layoutX="72.0" layoutY="263.0" mnemonicParsing="false" text="Student Sign Up">
+      <Button fx:id="btnStudentSignUp" layoutX="71.0" layoutY="322.0" mnemonicParsing="false" onAction="#studentSignUpPressed" text="Student Sign Up">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="348.0" layoutY="263.0" mnemonicParsing="false" text="Professor Sign Up">
+      <Button fx:id="btnProfessorSignUp" layoutX="343.0" layoutY="322.0" mnemonicParsing="false" onAction="#professorSignUpPressed" text="Professor Sign Up">
          <font>
             <Font size="20.0" />
          </font>
