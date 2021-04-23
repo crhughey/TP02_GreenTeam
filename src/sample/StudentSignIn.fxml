@@ -6,16 +6,16 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <TextField layoutX="226.0" layoutY="221.0" />
+      <TextField fx:id="txtStudentUsernameAttempt" layoutX="226.0" layoutY="221.0" />
       <Label layoutX="15.0" layoutY="33.0" text="Welcome Back Student!">
          <font>
             <Font name="Arial Bold" size="50.0" />
          </font>
       </Label>
-      <PasswordField layoutX="226.0" layoutY="307.0" />
+      <PasswordField fx:id="pwfStudentPasswordAttempt" layoutX="226.0" layoutY="307.0" />
       <Label layoutX="226.0" layoutY="204.0" text="Username:" />
       <Label layoutX="226.0" layoutY="291.0" text="Password:" />
-      <Button layoutX="89.0" layoutY="461.0" mnemonicParsing="false" text="Login">
+      <Button fx:id="btnStudentLoginAttempt" layoutX="89.0" layoutY="461.0" mnemonicParsing="false" onAction="#studentLoginAttempt" text="Login">
          <font>
             <Font size="20.0" />
          </font>

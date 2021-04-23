@@ -6,10 +6,10 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <TextField layoutX="215.0" layoutY="152.0" />
-      <TextField layoutX="215.0" layoutY="216.0" />
-      <PasswordField layoutX="215.0" layoutY="287.0" />
-      <Button layoutX="82.0" layoutY="440.0" mnemonicParsing="false" text="Sign Up">
+      <TextField fx:id="txtStudentName" layoutX="215.0" layoutY="152.0" />
+      <TextField fx:id="txtStudentUsername" layoutX="215.0" layoutY="216.0" />
+      <PasswordField fx:id="pwfStudentPassword" layoutX="215.0" layoutY="287.0" />
+      <Button fx:id="btnNewStudent" layoutX="82.0" layoutY="440.0" mnemonicParsing="false" onAction="#btnAddStudent" text="Sign Up">
          <font>
             <Font size="20.0" />
          </font></Button>

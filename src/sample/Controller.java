@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +23,36 @@ public class Controller {
     Button btnProfessorSignUp;
     @FXML
     Button btnCancel;
+    @FXML
+    Button btnNewStudent;
+    @FXML
+    TextField txtStudentName;
+    @FXML
+    TextField txtStudentUsername;
+    @FXML
+    PasswordField pwfStudentPassword;
+    @FXML
+    TextField txtStudentUsernameAttempt;
+    @FXML
+    PasswordField pwfStudentPasswordAttempt;
+    @FXML
+    Button btnStudentLoginAttempt;
+    @FXML
+    TextField txtProfessorUsernameAttempt;
+    @FXML
+    PasswordField pwfProfessorPasswordAttempt;
+    @FXML
+    Button btnProfessorSignInAttempt;
+    @FXML
+    TextField txtAddProfessorName;
+    @FXML
+    PasswordField pwfAddProfessorPassword;
+    @FXML
+    TextField txtAddProfessorUsername;
+    @FXML
+    Label lblGreetStudent;
+    @FXML
+    Label lblGreetProfessor;
 
 
     //Navigation Buttons
@@ -58,4 +91,33 @@ public class Controller {
         window.setScene(new Scene(root, 600, 600));
     }
 
+    //This is where we would need the file writer to add new students
+    public void btnAddStudent(){
+        //These are the text fields and password fields for the student sign up
+        //txtStudentName
+        //txtStudentUsername
+        //pwfStudentPassword
+    }
+
+    //This method is used when a student attempts to login
+    public void studentLoginAttempt(){
+        // txtStudentUsernameAttempt
+        // pwfStudentPasswordAttempt
+        // btnStudentLoginAttempt, I'm not sure if you'll need this but here it is
+        // lblGreetStudent (This is to display the student's name when taken to the new screen, if it's successful)
+    }
+
+    //This method is for when a professor attempts to login
+    public void professorSignInAttempt() {
+        // txtProfessorUsernameAttempt
+        // pwfProfessorPasswordAttempt
+        // btnProfessorSignInAttempt  (This one starts this method)
+        // lblGreetProfessor (This is to display the professor's name when taken to the new screen, if it's successful)
+    }
+
+    public void addProfessor(){
+        // txtAddProfessorUsername
+        // txtAddProfessorName
+        // pwfAddProfessorPassword
+    }
 }

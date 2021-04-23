@@ -15,14 +15,16 @@
             <Font name="Arial Bold" size="45.0" />
          </font>
       </Label>
-      <PasswordField layoutX="226.0" layoutY="300.0" />
-      <Label layoutX="226.0" layoutY="283.0" text="Password:" />
-      <TextField layoutX="226.0" layoutY="226.0" />
-      <Label layoutX="226.0" layoutY="209.0" text="Username:" />
-      <Button layoutX="99.0" layoutY="403.0" mnemonicParsing="false" text="Sign In">
+      <PasswordField fx:id="pwfAddProfessorPassword" layoutX="224.0" layoutY="300.0" />
+      <Label layoutX="224.0" layoutY="283.0" text="Password:" />
+      <TextField fx:id="txtAddProfessorName" layoutX="224.0" layoutY="141.0" />
+      <Label layoutX="224.0" layoutY="124.0" text="Name:" />
+      <Button fx:id="btnAddProfessor" layoutX="99.0" layoutY="403.0" mnemonicParsing="false" onAction="#addProfessor" text="Sign In">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
+      <Label layoutX="222.0" layoutY="208.0" text="Username:" />
+      <TextField fx:id="txtAddProfessorUsername" layoutX="224.0" layoutY="225.0" />
    </children>
 </Pane>

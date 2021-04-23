@@ -11,9 +11,9 @@
             <Font name="Arial Bold" size="55.0" />
          </font>
       </Label>
-      <TextField layoutX="226.0" layoutY="174.0" />
-      <PasswordField layoutX="226.0" layoutY="265.0" />
-      <Button layoutX="89.0" layoutY="396.0" mnemonicParsing="false" text="Sign In">
+      <TextField fx:id="txtProfessorUsernameAttempt" layoutX="226.0" layoutY="174.0" />
+      <PasswordField fx:id="pwfProfessorPasswordAttempt" layoutX="226.0" layoutY="265.0" />
+      <Button fx:id="btnProfessorSignInAttempt" layoutX="89.0" layoutY="396.0" mnemonicParsing="false" onAction="#professorSignInAttempt" text="Sign In">
          <font>
             <Font size="20.0" />
          </font>
@@ -22,7 +22,7 @@
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Label layoutX="226.0" layoutY="157.0" text="Name:" />
+      <Label layoutX="226.0" layoutY="157.0" text="Username:" />
       <Label layoutX="226.0" layoutY="248.0" text="Password:" />
    </children>
 </Pane>
