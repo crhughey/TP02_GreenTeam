@@ -2,20 +2,39 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <children>
-      <Label fx:id="lblGreetProfessor" layoutX="97.0" layoutY="41.0" text="Hello Professor">
-         <font>
-            <Font name="Arial Bold" size="55.0" />
-         </font>
-      </Label>
-      <TableView layoutX="200.0" layoutY="225.0" prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
-   </children>
-</Pane>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PfController">
+    <children>
+        <TableView fx:id="tableView" prefHeight="350.0" prefWidth="600.0" GridPane.rowIndex="0">
+            <columns>
+                <TableColumn fx:id="classNameColumn" minWidth="200.0" prefWidth="75.0" text="Class Name" />
+                <TableColumn fx:id="classRoomlumn" minWidth="200.0" prefWidth="75.0" text="Class Room" />
+                <TableColumn fx:id="classDayColumn" minWidth="200.0" prefWidth="75.0" text="Class Day" />
+            </columns>
+        </TableView>
+        <HBox prefHeight="120.0" prefWidth="600.0" GridPane.rowIndex="1">
+            <children>
+                <TextField fx:id="txtClassName" minWidth="100.0" prefWidth="75.0" />
+                <TextField fx:id="txtClassRoom" minWidth="100.0" prefWidth="75.0" />
+                <TextField fx:id="txtClassDay" minWidth="100.0" prefWidth="75.0" />
+                <Button fx:id="btnPfAdd" mnemonicParsing="false" onAction="#addButtonClick" text="Add" />
+                <Button fx:id="btnPfSave" mnemonicParsing="false" onAction="#saveButtonClick" text="Update" />
+                <Button fx:id="btnPfDelete" mnemonicParsing="false" onAction="#deleteButtonClick" text="Delete" />
+            </children>
+        </HBox>
+        <HBox alignment="TOP_CENTER" prefHeight="120.0" prefWidth="600.0" GridPane.rowIndex="2">
+            <children>
+                <Button fx:id="btnPfStudents" alignment="CENTER" mnemonicParsing="false" onAction="#studetnButtonClick"  text="Students In Class" />
+                <Button fx:id="btnPfClose" alignment="CENTER" mnemonicParsing="false" onAction="#closeButtonClick"  text="Close" />
+            </children>
+        </HBox>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+    </rowConstraints>
+</GridPane>
