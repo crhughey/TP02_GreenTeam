@@ -22,7 +22,8 @@
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Label layoutX="226.0" layoutY="157.0" text="Username:" />
+      <Label layoutX="226.0" layoutY="157.0" text="Email:" />
       <Label layoutX="226.0" layoutY="248.0" text="Password:" />
    </children>
 </Pane>
+
