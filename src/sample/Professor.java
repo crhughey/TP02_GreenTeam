@@ -21,7 +21,7 @@ public class Professor {
 
         // Hash password with a salt when writing to file
         this.salt = hash.getSalt();
-        this.hashed_password = hash.getSecurePassword(this.password, salt);
+        this.hashed_password = Hash.getSecurePassword(this.password, salt);
     }
 
     public Professor(String id, String email, String name, String hashed_password, String salt) throws NoSuchAlgorithmException {

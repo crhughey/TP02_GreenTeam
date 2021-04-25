@@ -47,7 +47,7 @@ public class ProfessorManager {
         Hash hash = new Hash();
         for ( Professor professor : professors) {
             if (professor.getEmail().equals(email)) {
-                String newHash = hash.getSecurePassword(password, professor.getSalt());
+                String newHash = Hash.getSecurePassword(password, professor.getSalt());
                 if (newHash.equals(professor.getHashed_password())) {
                     return professor;
                 } else {

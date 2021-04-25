@@ -14,44 +14,25 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 public class Controller {
-    @FXML
-    Button btnStudentSignIn;
-    @FXML
-    Button btnProfessorSignIn;
-    @FXML
-    Button btnStudentSignUp;
-    @FXML
-    Button btnProfessorSignUp;
-    @FXML
-    Button btnCancel;
-    @FXML
-    Button btnNewStudent;
-    @FXML
-    TextField txtStudentName;
-    @FXML
-    TextField txtStudentUsername;
-    @FXML
-    PasswordField pwfStudentPassword;
-    @FXML
-    TextField txtStudentUsernameAttempt;
-    @FXML
-    PasswordField pwfStudentPasswordAttempt;
-    @FXML
-    Button btnStudentLoginAttempt;
-    @FXML
-    TextField txtProfessorUsernameAttempt;
-    @FXML
-    PasswordField pwfProfessorPasswordAttempt;
-    @FXML
-    Button btnProfessorSignInAttempt;
-    @FXML
-    TextField txtAddProfessorName;
-    @FXML
-    PasswordField pwfAddProfessorPassword;
-    @FXML
-    TextField txtAddProfessorUsername;
-    @FXML
-    Label lblGreetStudent;
+    @FXML Button btnStudentSignIn;
+    @FXML Button btnProfessorSignIn;
+    @FXML Button btnStudentSignUp;
+    @FXML Button btnProfessorSignUp;
+    @FXML Button btnCancel;
+    @FXML Button btnNewStudent;
+    @FXML TextField txtStudentName;
+    @FXML TextField txtStudentUsername;
+    @FXML PasswordField pwfStudentPassword;
+    @FXML TextField txtStudentUsernameAttempt;
+    @FXML PasswordField pwfStudentPasswordAttempt;
+    @FXML Button btnStudentLoginAttempt;
+    @FXML TextField txtProfessorUsernameAttempt;
+    @FXML PasswordField pwfProfessorPasswordAttempt;
+    @FXML Button btnProfessorSignInAttempt;
+    @FXML TextField txtAddProfessorName;
+    @FXML PasswordField pwfAddProfessorPassword;
+    @FXML TextField txtAddProfessorUsername;
+    @FXML Label lblGreetStudent;
     // @FXML
     //Label lblGreetProfessor;
 
@@ -98,11 +79,29 @@ public class Controller {
     // Student main screen buttons
     // ***************** //
     //This is where we would need the file writer to add new students
-    public void btnAddStudent(){
+    public void btnAddStudent() throws IOException {
         //These are the text fields and password fields for the student sign up
         //txtStudentName
+        String name = txtStudentName.getText();
         //txtStudentUsername
+        String email = txtStudentUsername.getText();
         //pwfStudentPassword
+        String password = pwfStudentPassword.getText();
+
+        boolean studentAdded = false;
+        try {
+            studentAdded = StudentManager.addStudentInFile(name, email, password);
+        }
+        catch ( NoSuchAlgorithmException e ) {
+            System.out.println("Error" + e.getMessage());
+        }
+
+        if ( studentAdded ) {
+            Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+            Stage window = (Stage) btnCancel.getScene().getWindow();
+            window.setScene(new Scene(root, 600, 600));
+        }
+
     }
 
     //This method is used when a student attempts to login
@@ -128,6 +127,7 @@ public class Controller {
             pf = ProfessorManager.checkProfessorInFile(txtProfessorUsernameAttempt.getText(), pwfProfessorPasswordAttempt.getText());
         }
         catch ( NoSuchAlgorithmException e ) {
+            System.out.println("Error " + e.getMessage());
         }
         if ( pf != null ) {
             Parent root = FXMLLoader.load(getClass().getResource("ProfessorScreen.fxml"));
@@ -155,7 +155,7 @@ public class Controller {
             );
         }
         catch ( NoSuchAlgorithmException e ) {
-
+            System.out.println("Error " + e.getMessage());
         }
 
         if ( bProfAdded ) {
