@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 public class Controller {
     @FXML
@@ -51,11 +52,13 @@ public class Controller {
     TextField txtAddProfessorUsername;
     @FXML
     Label lblGreetStudent;
-    @FXML
-    Label lblGreetProfessor;
+    // @FXML
+    //Label lblGreetProfessor;
 
 
-    //Navigation Buttons
+    // ***************** //
+    //Navigation Buttons - Main Screen
+    // ***************** //
     //This button takes the user from the startup screen to the student Sign In page
     public void studentSignInPressed() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("StudentSignIn.fxml"));
@@ -91,6 +94,9 @@ public class Controller {
         window.setScene(new Scene(root, 600, 600));
     }
 
+    // ***************** //
+    // Student main screen buttons
+    // ***************** //
     //This is where we would need the file writer to add new students
     public void btnAddStudent(){
         //These are the text fields and password fields for the student sign up
@@ -107,17 +113,59 @@ public class Controller {
         // lblGreetStudent (This is to display the student's name when taken to the new screen, if it's successful)
     }
 
+    // ***************** //
+    // Professor main screen buttons
+    // ***************** //
     //This method is for when a professor attempts to login
-    public void professorSignInAttempt() {
+    public void professorSignInAttempt()  throws IOException {
         // txtProfessorUsernameAttempt
         // pwfProfessorPasswordAttempt
         // btnProfessorSignInAttempt  (This one starts this method)
         // lblGreetProfessor (This is to display the professor's name when taken to the new screen, if it's successful)
+
+        Professor pf = null;
+        try {
+            pf = ProfessorManager.checkProfessorInFile(txtProfessorUsernameAttempt.getText(), pwfProfessorPasswordAttempt.getText());
+        }
+        catch ( NoSuchAlgorithmException e ) {
+        }
+        if ( pf != null ) {
+            Parent root = FXMLLoader.load(getClass().getResource("ProfessorScreen.fxml"));
+            Stage window = (Stage) btnCancel.getScene().getWindow();
+            window.setScene(new Scene(root, 600, 500));
+            window.setTitle("Class Data for professor - + pf.getName()");
+        }
+        else {
+            Parent root = FXMLLoader.load(getClass().getResource("ProfessorSignIn.fxml"));
+            Stage window = (Stage) btnCancel.getScene().getWindow();
+            window.setScene(new Scene(root, 600, 600));
+        }
     }
 
-    public void addProfessor(){
+    public void addProfessor() throws IOException{
         // txtAddProfessorUsername
         // txtAddProfessorName
         // pwfAddProfessorPassword
+        boolean bProfAdded = false;
+        try {
+            bProfAdded = ProfessorManager.addProfessorInFile(
+                    txtAddProfessorName.getText(),
+                    txtAddProfessorUsername.getText(),
+                    pwfAddProfessorPassword.getText()
+            );
+        }
+        catch ( NoSuchAlgorithmException e ) {
+
+        }
+
+        if ( bProfAdded ) {
+            Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+            Stage window = (Stage) btnCancel.getScene().getWindow();
+            window.setScene(new Scene(root, 600, 600));
+        }
     }
+
+    // ***************** //
+    // Professor screen operations
+    // ***************** //
 }
