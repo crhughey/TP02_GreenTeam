@@ -23,7 +23,7 @@ public class StudentManager {
 
             //Write Each user from the ArrayList onto a file
             for(Student student : students) {
-                fw.append(student.getId());
+                fw.append(student.getId()).append(",");
                 fw.append(secure.encrypt(student.getEmail(), secret)).append(",");
                 fw.append(secure.encrypt(student.getName(), secret)).append(",");
                 fw.append(student.getHashed_password()).append(",");

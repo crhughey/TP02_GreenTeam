@@ -30,8 +30,10 @@ public class StudentController implements Initializable {
     StudentClass selectedClass = new StudentClass();
     ObservableList<StudentClass> studentClasses = StudentClass.loadDummyData();
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         colClassName.setCellValueFactory(new PropertyValueFactory<StudentClass, String>("studentClassName"));
         colClassroom.setCellValueFactory(new PropertyValueFactory<StudentClass, String>("studentClassroom"));
         colProfessor.setCellValueFactory(new PropertyValueFactory<StudentClass, String>("studentProfessor"));

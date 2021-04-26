@@ -105,11 +105,29 @@ public class Controller {
     }
 
     //This method is used when a student attempts to login
-    public void studentLoginAttempt(){
+    public void studentLoginAttempt() throws IOException {
         // txtStudentUsernameAttempt
         // pwfStudentPasswordAttempt
         // btnStudentLoginAttempt, I'm not sure if you'll need this but here it is
         // lblGreetStudent (This is to display the student's name when taken to the new screen, if it's successful)
+
+        Student stu = null;
+        try {
+            stu = StudentManager.checkStudentInFile(txtStudentUsernameAttempt.getText(), pwfStudentPasswordAttempt.getText());
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println("Error " + e.getMessage());
+        }
+        if ( stu != null ) {
+            Parent root = FXMLLoader.load(getClass().getResource("StudentScreen.fxml"));
+            Stage window = (Stage) btnCancel.getScene().getWindow();
+            window.setScene(new Scene(root, 600, 600));
+        }
+        else {
+            Parent root = FXMLLoader.load(getClass().getResource("StudentSignIn.fxml"));
+            Stage window = (Stage) btnCancel.getScene().getWindow();
+            window.setScene(new Scene(root, 600, 600));
+        }
+
     }
 
     // ***************** //
