@@ -49,4 +49,3 @@ public class PfClass {
         this.pfClassDay.set(pfClassDay);
     }
 }
-
