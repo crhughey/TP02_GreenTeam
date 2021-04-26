@@ -1,8 +1,5 @@
 package sample;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
