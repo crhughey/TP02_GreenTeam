@@ -18,7 +18,7 @@ public class StudentManager {
     private static void createFile(ArrayList<Student> students) {
 
         try {
-            FileWriter fw = new FileWriter(fileName, true);
+            FileWriter fw = new FileWriter(fileName);
             Security secure = new Security();
 
             //Write Each user from the ArrayList onto a file
@@ -36,7 +36,7 @@ public class StudentManager {
     }
 
     public static boolean addStudentInFile(String name, String username, String password) throws NoSuchAlgorithmException {
-        checkForFile();
+ //       checkForFile();
 
         ArrayList<Student> students = loadStudentFromFile();
 
