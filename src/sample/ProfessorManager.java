@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ProfessorManager {
 
     private static String strProfFileName = "professors.csv";
-    private static final String secret = "OKCURowingTeam";
+    private static String secret = "OKCURowingTeam";
 
     public static boolean addProfessorInFile( String name, String email, String password)  throws NoSuchAlgorithmException {
         // check for File
@@ -47,7 +47,7 @@ public class ProfessorManager {
         Hash hash = new Hash();
         for ( Professor professor : professors) {
             if (professor.getEmail().equals(email)) {
-                String newHash = Hash.getSecurePassword(password, professor.getSalt());
+                String newHash = hash.getSecurePassword(password, professor.getSalt());
                 if (newHash.equals(professor.getHashed_password())) {
                     return professor;
                 } else {
@@ -123,4 +123,5 @@ public class ProfessorManager {
         return list;
     }
 }
+
 
