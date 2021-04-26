@@ -104,7 +104,6 @@ public class PfController implements Initializable {
     }
 
     public void closeButtonClick() throws IOException {
-        // HOW TO CLOSE THIS STAGE AND OPEN MAIN STAGE???
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Stage window = (Stage) btnPfClose.getScene().getWindow();
         window.setScene(new Scene(root, 600, 600));
