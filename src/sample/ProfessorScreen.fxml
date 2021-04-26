@@ -24,7 +24,7 @@
         </HBox>
         <HBox alignment="TOP_CENTER" prefHeight="120.0" prefWidth="600.0" GridPane.rowIndex="2">
             <children>
-                <Button fx:id="btnPfStudents" alignment="CENTER" mnemonicParsing="false" onAction="#studetnButtonClick"  text="Students In Class" />
+                <Button fx:id="btnPfStudents" alignment="CENTER" mnemonicParsing="false" onAction="#studentButtonClick"  text="Students In Class" />
                 <Button fx:id="btnPfClose" alignment="CENTER" mnemonicParsing="false" onAction="#closeButtonClick"  text="Close" />
             </children>
         </HBox>
