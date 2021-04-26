@@ -17,6 +17,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+//Controller for Student's page after login
+
 public class StudentController implements Initializable {
     @FXML TableView<StudentClass> tblClassInfo;
     @FXML TableColumn<StudentClass, String> colClassName;

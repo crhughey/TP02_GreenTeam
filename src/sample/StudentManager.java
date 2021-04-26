@@ -39,8 +39,6 @@ public class StudentManager {
 
     public static boolean addStudentInFile(String name, String username, String password) throws NoSuchAlgorithmException {
 
- //       checkForFile();
-
         ArrayList<Student> students = loadStudentFromFile();
 
         //create new student
