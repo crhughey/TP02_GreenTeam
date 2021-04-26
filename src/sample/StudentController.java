@@ -38,7 +38,6 @@ public class StudentController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //lblGreetStudent.setText("Hello " + Student.getName());
 
         colClassName.setCellValueFactory(new PropertyValueFactory<StudentClass, String>("studentClassName"));
         colClassroom.setCellValueFactory(new PropertyValueFactory<StudentClass, String>("studentClassroom"));
@@ -58,9 +57,9 @@ public class StudentController implements Initializable {
                 selectedClass = change.getList().get(0);
 
                 txtClassName.setText(selectedClass.getStudentClassName());
-                txtClassName.setText(selectedClass.getStudentClassroom());
-                txtClassName.setText(selectedClass.getStudentProfessor());
-                txtClassName.setText(selectedClass.getStudentClassDay());
+                txtClassroom.setText(selectedClass.getStudentClassroom());
+                txtProfessor.setText(selectedClass.getStudentProfessor());
+                txtClassDay.setText(selectedClass.getStudentClassDay());
             }
         });
     }
