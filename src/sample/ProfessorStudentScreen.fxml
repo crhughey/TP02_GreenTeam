@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PfStController">
+    <children>
+        <TableView fx:id="tableView" prefHeight="350.0" prefWidth="600.0" GridPane.rowIndex="0">
+            <columns>
+                <TableColumn fx:id="studentFirstNameColumn" minWidth="200.0" prefWidth="75.0" text="First Name" />
+                <TableColumn fx:id="studentLastNameColumn" minWidth="200.0" prefWidth="75.0" text="Last Name" />
+                <TableColumn fx:id="studentEMailColumn" minWidth="200.0" prefWidth="75.0" text="EMail" />
+            </columns>
+        </TableView>
+        <HBox prefHeight="120.0" prefWidth="600.0" GridPane.rowIndex="1">
+            <children>
+                <TextField fx:id="txtFirstName" minWidth="100.0" prefWidth="75.0" />
+                <TextField fx:id="txtLastName" minWidth="100.0" prefWidth="75.0" />
+                <TextField fx:id="txtEMail" minWidth="100.0" prefWidth="75.0" />
+                <Button fx:id="btnPfStAdd" mnemonicParsing="false" onAction="#addButtonClick" text="Add" />
+                <Button fx:id="btnPfStSave" mnemonicParsing="false" onAction="#saveButtonClick" text="Update" />
+                <Button fx:id="btnPfStDelete" mnemonicParsing="false" onAction="#deleteButtonClick" text="Delete" />
+            </children>
+        </HBox>
+        <HBox alignment="TOP_CENTER" prefHeight="120.0" prefWidth="600.0" GridPane.rowIndex="2">
+            <children>
+                <Button fx:id="btnPfStClose" alignment="CENTER" mnemonicParsing="false" onAction="#closeButtonClick" text="Close" />
+            </children>
+        </HBox>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+    </rowConstraints>
+</GridPane>
