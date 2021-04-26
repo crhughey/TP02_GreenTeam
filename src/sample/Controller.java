@@ -32,10 +32,6 @@ public class Controller {
     @FXML TextField txtAddProfessorName;
     @FXML PasswordField pwfAddProfessorPassword;
     @FXML TextField txtAddProfessorUsername;
-    @FXML Label lblGreetStudent;
-    // @FXML
-    //Label lblGreetProfessor;
-
 
     // ***************** //
     //Navigation Buttons - Main Screen
