@@ -24,7 +24,7 @@ public class StudentManager {
             //Write Each user from the ArrayList onto a file
             for(Student student : students) {
                 fw.append(student.getId()).append(",");
-                fw.append(secure.encrypt(student.getEmail(), secret)).append(",");
+                fw.append(secure.encrypt(student.getUsername(), secret)).append(",");
                 fw.append(secure.encrypt(student.getName(), secret)).append(",");
                 fw.append(student.getHashed_password()).append(",");
                 fw.append(student.getSalt()).append("\n");
@@ -35,19 +35,19 @@ public class StudentManager {
         }
     }
 
-    public static boolean addStudentInFile(String name, String email, String password) throws NoSuchAlgorithmException {
+    public static boolean addStudentInFile(String name, String username, String password) throws NoSuchAlgorithmException {
         checkForFile();
 
         ArrayList<Student> students = loadStudentFromFile();
 
         //create new student
         int nId = students.size() +1;
-        Student student = new Student((new Integer(nId)).toString(), email, name, password);
+        Student student = new Student((new Integer(nId)).toString(), username, name, password);
         students.add(student);
 
         //Save to file
         createFile(students);
-        System.out.println("Student added " + student.toString());
+        System.out.println("Student added: " + student.toString());
 
         return true;
     }
@@ -66,19 +66,18 @@ public class StudentManager {
         }
     }
 
-    public static Student checkStudentInFile(String email,String password) throws NoSuchAlgorithmException {
-        checkForFile();
+    public static Student checkStudentInFile(String username,String password) throws NoSuchAlgorithmException {
 
         ArrayList<Student> students = loadStudentFromFile();
 
-        return checkStudentPassword(students, email, password);
+        return checkStudentPassword(students, username, password);
     }
 
-    private static Student checkStudentPassword(ArrayList<Student> students, String email, String password) {
+    private static Student checkStudentPassword(ArrayList<Student> students, String username, String password) {
         boolean match = false;
         Hash hash = new Hash();
         for(Student student : students) {
-            if(student.getEmail().equals(email)) {
+            if(student.getUsername().equals(username)) {
                 String newHash = Hash.getSecurePassword(password, student.getSalt());
                 if(newHash.equals(student.getHashed_password())) {
                     return student;

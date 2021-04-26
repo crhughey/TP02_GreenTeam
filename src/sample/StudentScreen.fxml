@@ -10,7 +10,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StudentController">
    <children>
-      <Label fx:id="lblGreetStudent" layoutX="139.0" layoutY="33.0" text="Hello Student">
+      <Label fx:id="lblGreetStudent" alignment="CENTER" contentDisplay="CENTER" layoutX="139.0" layoutY="33.0" text="Hello Student" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="50.0" />
          </font>
@@ -27,8 +27,9 @@
       <TextField fx:id="txtClassroom" layoutX="150.0" layoutY="523.0" prefHeight="25.0" prefWidth="150.0" promptText="Add Classroom" />
       <TextField fx:id="txtProfessor" layoutX="300.0" layoutY="523.0" prefHeight="25.0" prefWidth="150.0" promptText="Add Professor" />
       <TextField fx:id="txtClassDay" layoutX="450.0" layoutY="523.0" prefHeight="25.0" prefWidth="150.0" promptText="Add Class Day" />
-      <Button fx:id="btnAdd" layoutX="131.0" layoutY="561.0" mnemonicParsing="false" onAction="#Add" text="Add" />
-      <Button fx:id="btnUpdate" layoutX="273.0" layoutY="561.0" mnemonicParsing="false" onAction="#Update" text="Update" />
-      <Button fx:id="btnDelete" layoutX="425.0" layoutY="561.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
+      <Button fx:id="btnAdd" layoutX="49.0" layoutY="561.0" mnemonicParsing="false" onAction="#Add" text="Add" />
+      <Button fx:id="btnUpdate" layoutX="129.0" layoutY="561.0" mnemonicParsing="false" onAction="#Update" text="Update" />
+      <Button fx:id="btnDelete" layoutX="225.0" layoutY="561.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
+      <Button fx:id="btnCancel" layoutX="505.0" layoutY="561.0" mnemonicParsing="false" onAction="#Cancel" text="Cancel" />
    </children>
 </Pane>

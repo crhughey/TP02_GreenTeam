@@ -14,7 +14,7 @@ public class ProfessorManager {
 
     public static boolean addProfessorInFile( String name, String email, String password)  throws NoSuchAlgorithmException {
         // check for File
-        // checkForFile();
+        //checkForFile();
 
         // Retrieve User from file
         ArrayList<Professor> professors = loadProfessorFromFile(strProfFileName);

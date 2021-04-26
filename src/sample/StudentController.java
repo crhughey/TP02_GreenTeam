@@ -4,16 +4,20 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class StudentController implements Initializable {
-    @FXML
-    TableView<StudentClass> tblClassInfo;
+    @FXML TableView<StudentClass> tblClassInfo;
     @FXML TableColumn<StudentClass, String> colClassName;
     @FXML TableColumn<StudentClass, String> colClassroom;
     @FXML TableColumn<StudentClass, String> colProfessor;
@@ -25,14 +29,17 @@ public class StudentController implements Initializable {
     @FXML Button btnAdd;
     @FXML Button btnUpdate;
     @FXML Button btnDelete;
+    @FXML Button btnCancel;
     @FXML Label lblGreetStudent;
 
     StudentClass selectedClass = new StudentClass();
     ObservableList<StudentClass> studentClasses = StudentClass.loadDummyData();
 
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //lblGreetStudent.setText("Hello " + Student.getName());
 
         colClassName.setCellValueFactory(new PropertyValueFactory<StudentClass, String>("studentClassName"));
         colClassroom.setCellValueFactory(new PropertyValueFactory<StudentClass, String>("studentClassroom"));
@@ -81,5 +88,11 @@ public class StudentController implements Initializable {
 
     public void Delete(ActionEvent actionEvent) {
         studentClasses.remove(selectedClass);
+    }
+
+    public void Cancel(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Stage window = (Stage) btnCancel.getScene().getWindow();
+        window.setScene(new Scene(root, 600, 600));
     }
 }
