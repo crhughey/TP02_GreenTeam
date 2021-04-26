@@ -164,8 +164,4 @@ public class Controller {
             window.setScene(new Scene(root, 600, 600));
         }
     }
-
-    // ***************** //
-    // Professor screen operations
-    // ***************** //
 }
