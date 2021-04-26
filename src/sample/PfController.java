@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -34,6 +35,10 @@ public class PfController implements Initializable {
     TextField txtClassRoom;
     @FXML
     TextField txtClassDay;
+    @FXML
+    Button btnPfStudents;
+    @FXML
+    Button btnPfClose;
 
     PfClass selectedPfClass = new PfClass();
     ObservableList<PfClass> psClasses = PfClass.loadDummyData();
@@ -100,13 +105,15 @@ public class PfController implements Initializable {
 
     public void closeButtonClick() throws IOException {
         // HOW TO CLOSE THIS STAGE AND OPEN MAIN STAGE???
-        /*
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        Stage window = (Stage) btnCancel.getScene().getWindow();
+        Stage window = (Stage) btnPfClose.getScene().getWindow();
         window.setScene(new Scene(root, 600, 600));
-        */
     }
 
-    public void studetnButtonClick(ActionEvent actionEvent) {
+    public void studentButtonClick(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ProfessorStudentScreen.fxml"));
+        Stage window = (Stage) btnPfStudents.getScene().getWindow();
+        window.setScene(new Scene(root, 600, 600));
+        window.setTitle("Students in class ");
     }
 }
