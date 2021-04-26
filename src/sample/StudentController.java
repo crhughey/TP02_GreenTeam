@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class StudentController implements Initializable {
@@ -34,8 +35,6 @@ public class StudentController implements Initializable {
 
     StudentClass selectedClass = new StudentClass();
     ObservableList<StudentClass> studentClasses = StudentClass.loadDummyData();
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

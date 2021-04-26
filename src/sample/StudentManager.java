@@ -15,6 +15,8 @@ public class StudentManager {
     //Secret String for encrypting and decrypting
     private static final String secret = "Coding is my favorite";
 
+
+
     private static void createFile(ArrayList<Student> students) {
 
         try {
@@ -36,12 +38,11 @@ public class StudentManager {
     }
 
     public static boolean addStudentInFile(String name, String username, String password) throws NoSuchAlgorithmException {
-        checkForFile();
 
         ArrayList<Student> students = loadStudentFromFile();
 
         //create new student
-        int nId = students.size() +1;
+        int nId = students.size() + 1;
         Student student = new Student((new Integer(nId)).toString(), username, name, password);
         students.add(student);
 
@@ -58,7 +59,7 @@ public class StudentManager {
         if (!f.exists()) {
             //Create Student
             ArrayList<Student> students = new ArrayList<Student>();
-            Student student1 = new Student("1", "srmarrs@my.okcu.edu", "Savana Marrs", "password$");
+            Student student1 = new Student("1", "student1", "Best Student", "password$");
             students.add(student1);
 
             //Save Student to file
